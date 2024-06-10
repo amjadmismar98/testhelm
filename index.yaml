@@ -11,6 +11,17 @@ entries:
     urls:
     - https://github.com/amjadmismar98/testhelm/releases/download/delayed-logic-engine-0.0.23/delayed-logic-engine-0.0.23.tgz
     version: 0.0.23
+  event-log-manager:
+  - apiVersion: v2
+    appVersion: event-log-manager
+    created: "2024-06-10T13:47:33.629055857Z"
+    description: A Helm chart for Kubernetes
+    digest: 39e1981ba9483e001d9ee37b7b116f9fce6423cdfc5d2255b9b4ddafe363d7ef
+    name: event-log-manager
+    type: application
+    urls:
+    - https://github.com/amjadmismar98/testhelm/releases/download/event-log-manager-0.0.52/event-log-manager-0.0.52.tgz
+    version: 0.0.52
   test6:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -22,4 +33,4 @@ entries:
     urls:
     - https://github.com/amjadmismar98/testhelm/releases/download/test6-0.1.0/test6-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-10T13:43:36.183838282Z"
+generated: "2024-06-10T13:47:33.629061628Z"
