@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  delayed-logic-engine:
+  - apiVersion: v2
+    appVersion: delayed-logic-engine
+    created: "2024-06-10T13:43:36.183828644Z"
+    description: A Helm chart for Kubernetes
+    digest: 7c6b56c1764667e3412c24d93b3a1a3612d220f2c17faffe21862a6b16d7026e
+    name: delayed-logic-engine
+    type: application
+    urls:
+    - https://github.com/amjadmismar98/testhelm/releases/download/delayed-logic-engine-0.0.23/delayed-logic-engine-0.0.23.tgz
+    version: 0.0.23
   test6:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://github.com/amjadmismar98/testhelm/releases/download/test6-0.1.0/test6-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-10T13:41:43.481679478Z"
+generated: "2024-06-10T13:43:36.183838282Z"
