@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  test6:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-06-10T13:41:43.481673848Z"
+    description: A Helm chart for Kubernetes
+    digest: c1db9d2621316b24e3e33950455d4f764c7573b546c5684b05b9f7c9e7d2e976
+    name: test6
+    type: application
+    urls:
+    - https://github.com/amjadmismar98/testhelm/releases/download/test6-0.1.0/test6-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-06-10T13:41:43.481679478Z"
