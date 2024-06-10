@@ -1,0 +1,12 @@
+replicas: 1
+namespace: default
+
+image:
+   name: connectedmotiondocker/logic-engine
+   tag: 0.0.22
+   env: staging
+
+nodeLabelSelection: computing
+
+environmentVariablesFile: environment-variables-internal
+
