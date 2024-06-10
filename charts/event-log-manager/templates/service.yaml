@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: event-log-manager
+  namespace: {{ .Values.namespace }}
+  labels:
+    app.kubernetes.io/name: event-log-manager
+spec:
+  selector:
+    app.kubernetes.io/name: event-log-manager
+  ports:
+    - port: 3007
+      targetPort: 3007
+      name: event-log-manager
+  type: ClusterIP

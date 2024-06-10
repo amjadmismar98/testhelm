@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: delayed-logic-engine
+  name: event-log-manager
   namespace: {{ .Values.namespace }}
   labels:
-    app.kubernetes.io/name: delayed-logic-engine
+    app.kubernetes.io/name: event-log-manager
 spec:
   replicas: {{.Values.replicas }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: delayed-logic-engine
+      app.kubernetes.io/name: event-log-manager
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: delayed-logic-engine
+        app.kubernetes.io/name: event-log-manager
     spec:
       affinity: 
         nodeAffinity: 
@@ -25,19 +25,23 @@ spec:
                 values:
                 - {{ .Values.nodeLabelSelection }}
       containers:
-      - name: delayed-logic-engine
+      - name: event-log-manager
         image: "{{ .Values.image.name }}:{{ .Chart.Version}}-{{ .Values.image.env }}"
+        ports:
+        - containerPort: 3007
         env:
-          - name: SERVICE_TYPE
-            value: delayed-logic-engine
-          - name: TRIGGER_TOPIC_NAME
-            value: TRIP_COMPLETED_TOPIC_NAME
-          - name: PUBLISH_TOPIC_NAME
-            value: PROCESS_CONTROLLER_TRIGGER
+          - name: CONTACT_POINTS
+            value: cluster1-dc1-all-pods-service.cass-operator
+          - name: LOCAL_DATA_CENTER
+            value: dc1
+          - name: KEYSPACE
+            value: iot
           - name: CONSUMER_GROUP_NAME
-            value: DELAYED_LOGIC_ENGINE
+            value: PACKET_MANAGER
+          - name: TRIGGER_TOPIC_NAME
+            value: TELTONIKA_MESSAGE_RECEIVED
         envFrom:
         - configMapRef:
             name: {{ .Values.environmentVariablesFile }}
       imagePullSecrets:
-        - name: our-registry 
+        - name: our-registry  
